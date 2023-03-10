@@ -1,0 +1,46 @@
+<div>
+    <ul>
+        <li *ngFor="let article of listArticle" class="article-border">
+          {{ article.titre }} 
+          {{ article.contenu }} 
+          {{ article.auteur }} 
+          {{ article.date }} 
+          {{ article.categorie }}
+        </li>
+      </ul>
+</div>
+
+<div>
+    <button (click)="removeTravailArticles()">Enlever les articles de travail</button>
+    <ul>
+        <li *ngFor="let article of listArticle">
+          {{ article.titre }} - {{ article.categorie }}
+        </li>
+      </ul>
+</div>
+
+<div>
+    <input type="text" [value]="listArticle.length">
+<ul>
+  <li *ngFor="let article of listArticle" [class]="getColorClass(article)">
+          {{ article.titre }} 
+          {{ article.contenu }} 
+          {{ article.auteur }} 
+          {{ article.date }} 
+          {{ article.categorie }}
+  </li>
+</ul>
+</div>
+
+<div>
+    <input type="text" [(ngModel)]="inputValue" [value]="defaultArticlesToShow">
+<ul>
+  <li *ngFor="let article of listArticle | slice:0:inputValue">
+          {{ article.titre }} 
+          {{ article.contenu }} 
+          {{ article.auteur }} 
+          {{ article.date }} 
+          {{ article.categorie }}
+  </li>
+</ul>
+</div>
