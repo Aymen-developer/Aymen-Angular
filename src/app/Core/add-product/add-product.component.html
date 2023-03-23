@@ -1,0 +1,20 @@
+<form #f="ngForm">
+    <label>name</label>
+    <input type="text" name="nom" ngModel required minlength="3" #nom="ngModel">
+    <div *ngIf="nom.invalid && nom.touched">
+       <div *ngIf="nom.errors?.['required']">
+        required
+       </div>
+       <div *ngIf="nom.errors?.['minlength']">
+        minlength
+      </div>
+    </div>
+    <label>description</label>
+    <div *ngIf="test.invalid">
+        number
+    </div>
+    <input type="text"  name="desc" ngModel pattern="[0-9]*" #test="ngModel">
+    <label>price</label>
+    <input type="number"  name="price" ngModel>
+    <input type="submit" value="save" (click)="showForm(nom)"  [disabled]="f.invalid">
+</form>

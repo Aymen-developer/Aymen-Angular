@@ -1,0 +1,38 @@
+<form #f="ngForm">
+  <fieldset>
+    <legend>Informations générales</legend>
+    <label>Nom : </label>
+    <input type="text" name="nom" [(ngModel)]="nom" required ><br><br>
+    <label>Email : </label>
+    <input type="email" name="email" [(ngModel)]="email"  required pattern="[a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z]{3}"><br><br>
+    <fieldset>
+      <legend>Information du paiement</legend>
+      <label>Type de carte : </label>
+      <input type="text" name="type_carte" [(ngModel)]="type_carte" required><br><br>
+      <label>Numéro de carte : </label>
+      <input type="text" name="num_carte" [(ngModel)]="num_carte"  required pattern="[0-9]{16}"><br><br>
+      <label>Date d'expiration : </label>
+      <input type="text" name="date_expiration" [(ngModel)]="date_expiration" required ><br><br>
+      <label>Code : </label>
+      <input type="text" name="code" [(ngModel)]="code"  style="display:none;" ><br><br>
+    </fieldset>
+    <button type="submit" [disabled]="f.invalid">Ajouter</button>
+  </fieldset>
+</form>
+
+<script>
+  const cardType = document.getElementById('cardType');
+  const cardNumber = document.getElementById('cardNumber');
+  const code = document.getElementById('code');
+
+  function validatePayment() {
+    if (cardType.validity.valid && cardNumber.validity.valid) {
+      code.style.display = 'block';
+    } else {
+      code.style.display = 'none';
+    }
+  }
+
+  cardType.addEventListener('input', validatePayment);
+  cardNumber.addEventListener('input', validatePayment);
+</script>

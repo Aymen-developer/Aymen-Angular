@@ -35,3 +35,37 @@
     <input type="submit" value="buy" >    
     </div>-->
 </div>
+
+<hr>
+<div *ngFor="let p of listProdcut">
+    <div *ngIf="p.quantity===0">
+        <div [style.backgroundColor]="'red'">
+        {{p.id}}
+        {{p.title}}
+        {{p.price}}
+        {{p.quantity}}
+        {{p.like}} 
+         </div>
+    </div>
+    <div *ngIf="p.quantity!=0">
+        <div [style.backgroundColor]="'green'">
+        {{p.id}}
+        {{p.title}}
+        {{p.price}}
+        {{p.quantity}}
+        {{p.like}} 
+         </div>
+    </div>
+</div>
+
+<hr>
+
+<div *ngFor="let p of listProdcut">
+    <div [ngStyle]="{'backgroundColor':p.quantity==0 ? 'red' : 'green'}"> 
+        {{p.id}}
+        {{p.title}}
+        {{p.price}}
+        {{p.quantity}}
+        {{p.like}}  
+    </div>
+</div>

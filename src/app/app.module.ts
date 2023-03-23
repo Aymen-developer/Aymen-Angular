@@ -3,12 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
-import { NavComponent } from './nav/nav.component';
-import { FooterComponent } from './footer/footer.component';
+import { TestComponent } from './shared/test/test.component';
+import { NavComponent } from './shared/nav/nav.component';
+import { FooterComponent } from './shared/footer/footer.component';
 import { FormsModule } from '@angular/forms';
-import { OffresEmploiComponent } from './offres-emploi/offres-emploi.component';
-import { ArticleComponent } from './article/article.component';
+import { OffresEmploiComponent } from './first-workshop/offres-emploi/offres-emploi.component';
+import { ArticleComponent } from './first-workshop/article/article.component';
+import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { AddProductComponent } from './Core/add-product/add-product.component';
+import { NotfoundComponent } from './shared/notfound/notfound.component';
+import { UpdateProduitComponent } from './Core/update-produit/update-produit.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +23,13 @@ import { ArticleComponent } from './article/article.component';
     NavComponent,
     FooterComponent,
     OffresEmploiComponent,
-    ArticleComponent
+    ArticleComponent,
+    LoginComponent,
+    HeaderComponent,
+    AddProductComponent,
+    NotfoundComponent,
+    UpdateProduitComponent,
+    TemplateDrivenFormComponent
   ],
   imports: [
     BrowserModule,
