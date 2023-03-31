@@ -15,6 +15,9 @@ import { AddProductComponent } from './Core/add-product/add-product.component';
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { UpdateProduitComponent } from './Core/update-produit/update-produit.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ToDoListComponent } from './to-do-list/to-do-list.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +32,15 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
     AddProductComponent,
     NotfoundComponent,
     UpdateProduitComponent,
-    TemplateDrivenFormComponent
+    TemplateDrivenFormComponent,
+    ToDoListComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

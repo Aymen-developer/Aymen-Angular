@@ -1,0 +1,20 @@
+<ul>
+    <li *ngFor="let users of listUsers">
+        {{ users.id }}
+        {{ users.name }}
+        {{ users.username }}
+        {{ users.email }}
+    </li>
+</ul>
+
+<div>
+    <label for="username-input">Username:</label>
+    <input type="text" id="username-input" [(ngModel)]="username">
+    <button (click)="checkUsername()">Vérifier</button>
+  </div>
+
+  <h2>Liste des utilisateurs</h2>
+
+<div *ngFor="let user of listUsers">
+  <p>{{user.name}} <a href="#" (click)="viewTodos(user.id)">Voir Todos</a></p>
+</div>

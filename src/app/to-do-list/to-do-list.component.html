@@ -1,0 +1,18 @@
+<ul>
+    <li *ngFor="let todos of todolist">
+        {{ todos.userId }}
+        {{ todos.id }}
+        {{ todos.title }}
+        {{ todos.completed }}
+    </li>
+</ul>
+
+<div>
+    <p>Nombre de todo completed : {{ getNumberOf(todolist, 'completed', true) }}</p>
+</div>
+
+<div>
+    <button (click)="showBilan()">Bilan</button>
+
+</div>
+
